@@ -9,8 +9,22 @@ endif
 call plug#begin()
 "Python Formatter
 Plug 'psf/black', { 'branch': 'stable' } 
+"Home Screen
+Plug 'mhinz/vim-startify'
 call plug#end()
 
+"Startify Config
+let g:startify_bookmarks = [
+    \ {'a': '~/.vimrc'},
+    \ {'s': '~/.bashrc'},
+    \ {'d': '~/.tmux.conf'},    
+    \]
+let g:startify_commands = [
+    \ { 'w': ['Source Vimrc',':source $MYVIMRC'] },
+    \ { 'e': ['Run PlugUpdate',':PlugUpdate']},]
+let g:startify_custom_header =["    I <3 VIM!!"]
+let g:startify_files_number = 5
+let g:startify_skiplist = ['\..*rc','\.tmux\.conf']
 
 
 "Default Configs
